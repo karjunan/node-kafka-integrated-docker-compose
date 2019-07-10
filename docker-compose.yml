@@ -1,0 +1,19 @@
+version: "2"
+
+services:
+  # java-grpc-server:
+  #   image: "karjunan/java-grpc-server:latest"
+  #   container_name: java-grpc-server
+  #   ports:
+  #     - 10.0.102.166:43016:9000
+  #   environment:
+  #     HOST_IP: 10.0.102.166:9092
+
+  node-grpc-client-microservice:
+    image: "karjunan/node-grpc-client-microservice:latest"
+    restart: always
+    container_name: node-grpc-client-microservice
+    ports:
+      - 10.0.102.166:3010:3000
+    environment:
+      GRPC_SERVER_IP: 10.0.102.166:43016
